@@ -1,3 +1,24 @@
+type Alumno {
+  id: ID!
+  matricula: String!
+  nombre: String!
+  apellidoPaterno: String!
+  apellidoMaterno: String
+  correo: String!
+  telefono: String
+  idiomaNativo: String!
+  nivel: Int
+  recomendadoPor: String
+  tieneFamiliar: Boolean!
+  matriculaFamiliar: String
+}
+
 type Query {
-  ping: String
+  alumnos(
+    matricula: String
+    nombre: String
+    correo: String
+    idiomaNativo: String
+    nivel: Int
+  ): [Alumno!]!
 }
